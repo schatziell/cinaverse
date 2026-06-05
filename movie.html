@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильмы | CineVerse</title>
+    
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#12051f,#1a1040,#241b5e,#312783);
+    color:#fff;
+    min-height:100vh;
+    padding-top:110px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(15,15,35,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#9d7bff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#9d7bff;
+}
+
+.movies-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+    padding-bottom:50px;
+}
+
+.movie-page{
+    display:flex;
+    gap:30px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:25px;
+    transition:0.4s;
+    animation:fadeIn 0.8s ease;
+    backdrop-filter:blur(8px);
+}
+
+.movie-page:hover{
+    transform:translateY(-5px) scale(1.01);
+    box-shadow:0 10px 30px rgba(120,90,255,0.35);
+}
+
+.movie-poster{
+    width:240px;
+    border-radius:15px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.movie-page:hover .movie-poster{
+    transform:scale(1.03);
+}
+
+.movie-info{
+    flex:1;
+}
+
+.movie-info h1{
+    margin-bottom:15px;
+    color:#b89cff;
+    font-size:32px;
+}
+
+.movie-info p{
+    margin-bottom:10px;
+    line-height:1.5;
+    color:#e4e4e4;
+}
+
+.movie-info strong{
+    color:#ffffff;
+}
+
+.watch-btn{
+    display:inline-block;
+    margin:15px 0;
+    padding:12px 24px;
+    background:linear-gradient(135deg,#6f4cff,#8d63ff);
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.watch-btn:hover{
+    background:linear-gradient(135deg,#8d63ff,#5a36d6);
+    transform:scale(1.05);
+}
+
+iframe{
+    width:100%;
+    max-width:560px;
+    height:315px;
+    border:none;
+    border-radius:15px;
+    margin-top:10px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:850px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    body{
+        padding-top:150px;
+    }
+
+    .movie-page{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .movie-poster{
+        width:220px;
+    }
+
+    iframe{
+        height:220px;
+    }
+}
+</style>
+
+</head>
+<body>
+ 
+<header>
+    <div class="logo">CineVerse</div>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="movies.html">Фильмы</a>
+        <a href="about.html">О сайте</a>
+    </nav>
+</header>
+ 
+<div class="movies-container">
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Интерстеллар</h1>
+            <p>📅 <strong>Год:</strong> 2014</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.7</p>
+            <p>Команда исследователей отправляется через червоточину ради спасения человечества от надвигающегося экологического кризиса.</p>
+            <p>🎭 <strong>Актёры:</strong> Мэттью Макконахи, Энн Хэтэуэй, Джессика Честейн</p>
+            <p>🌍 <strong>Страна:</strong> США, Великобритания</p>
+            <p>🎬 <strong>Режиссёр:</strong> Кристофер Нолан</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/258687/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/zSWdZVtXT7E" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=d66ee31aa4baf01a2209e9a2c40c19a107748bf4-12399165-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Гарри Поттер и философский камень</h1>
+            <p>📅 <strong>Год:</strong> 2001</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.3</p>
+            <p>Жизнь одиннадцатилетнего Гарри Поттера коренным образом меняется, когда он узнает, что на самом деле является волшебником и зачисляется в школу магии Хогвартс.</p>
+            <p>🎭 <strong>Актёры:</strong> Дэниэл Рэдклифф, Руперт Гринт, Эмма Уотсон</p>
+            <p>🌍 <strong>Страна:</strong> Великобритания, США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Крис Коламбус</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/689/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/VyHV0BRZmTs" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=d555fd433144ce38694a3c2cd3e5ffbaaf05b04d-8172990-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Один дома</h1>
+            <p>📅 <strong>Год:</strong> 1990</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.3</p>
+            <p>Маленький мальчик случайно остается один дома на Рождество из-за спешки родителей и вынужден защищать свое жилище от пары неуклюжих грабителей.</p>
+            <p>🎭 <strong>Актёры:</strong> Маколей Калкин, Джо Пеши, Дэниел Стерн</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Крис Коламбус</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/8124/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/jEDaVHmw7Cw" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=1ca2fc6880c8760bcf010375b17e83385bdd881d-6533913-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Голодные игры</h1>
+            <p>📅 <strong>Год:</strong> 2012</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.3</p>
+            <p>В деспотичном государстве будущего ежегодно устраивают жестокие игры на выживание в прямом эфире, где из множества подростков живым останется только один.</p>
+            <p>🎭 <strong>Актёры:</strong> Дженнифер Лоуренс, Джош Хатчерсон, Лиам Хемсворт</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Гэри Росс</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/596125/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/mfmrPu43DF8" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=bb954883a6278fffec2deaf6bd2c23d1559a848e-5234588-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Астрал</h1>
+            <p>📅 <strong>Год:</strong> 2010</p>
+            <p>⭐ <strong>Рейтинг:</strong> 6.8</p>
+            <p>Молодая семья переезжает в новый дом, где их сын таинственным образом впадает в кому. Родители понимают, что ребенок связан с потусторонним миром призраков.</p>
+            <p>🎭 <strong>Актёры:</strong> Патрик Уилсон, Роуз Бирн, Тай Симпкинс</p>
+            <p>🌍 <strong>Страна:</strong> США, Канада</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джеймс Ван</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/495892/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/frzX8eT8bCE" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=4eb8f5d93332051c1346b7eec4689acad5b08a23-10767526-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Человек-паук</h1>
+            <p>📅 <strong>Год:</strong> 2002</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.7</p>
+            <p>Школьник-аутсайдер Питер Паркер получает суперспособности после укуса генетически измененного паука и решает посвятить жизнь борьбе с преступностью.</p>
+            <p>🎭 <strong>Актёры:</strong> Тоби Магуайр, Уиллем Дефо, Кирстен Данст</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Сэм Рэйми</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/838/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/TYMMOjBUPMM" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=ec692b3ea729fbda0de78e846967f12e60c8c2bb-5221012-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Мстители</h1>
+            <p>📅 <strong>Год:</strong> 2012</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.9</p>
+            <p>Глава международной организации Щ.И.Т. Ник Фьюри собирает команду выдающихся супергероев, чтобы спасти Землю от порабощения богом Локи.</p>
+            <p>🎭 <strong>Актёры:</strong> Роберт Дауни мл., Крис Эванс, Марк Руффало, Скарлетт Йоханссон</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джосс Уидон</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/258238/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/eOrNdBpGMv8" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=18568fcb7a13044eab14560a31a14a29ff478a6e-4572087-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Железный человек</h1>
+            <p>📅 <strong>Год:</strong> 2008</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.0</p>
+            <p>Гениальный миллиардер и изобретатель Тони Старк попадает в плен к террористам, конструирует высокотехнологичную броню и становится защитником мира.</p>
+            <p>🎭 <strong>Актёры:</strong> Роберт Дауни мл., Джефф Бриджес, Гвинет Пэлтроу</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джон Фавро</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/61237/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/8ugaeA-nMTc" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=52c27e877b8edeeb948338f8e1ee146b7605a485-4869929-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Доктор Стрэндж</h1>
+            <p>📅 <strong>Год:</strong> 2016</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.5</p>
+            <p>Успешный нейрохирург Стефан Стрэндж теряет чувствительность рук в автокатастрофе. В поисках исцеления он открывает для себя мистический мир магии.</p>
+            <p>🎭 <strong>Актёры:</strong> Бенедикт Камбербэтч, Тильда Суинтон, Мадс Миккельсен</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Скотт Дерриксон</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/843820/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/HSzx-zry1Yo" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://static.wikia.nocookie.net/to-hollywood-and-beyond/images/2/2a/Thor_2011.jpg/revision/latest?cb=20140417221929" alt="Постер">
+        <div class="movie-info">
+            <h1>Тор</h1>
+            <p>📅 <strong>Год:</strong> 2011</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.1</p>
+            <p>Высокомерного и сильного бога Тора лишают сил и изгоняют из Асгарда на Землю в наказание за разжигание древней войны. Он должен доказать, что достоин своего молота.</p>
+            <p>🎭 <strong>Актёры:</strong> Крис Хемсворт, Натали Портман, Том Хиддлстон</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Кеннет Брана</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/436818/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/JOddp-nlNvQ" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=721e36b8da16fafeb5b8da532de0e8dc_l-5316602-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Бэтмен</h1>
+            <p>📅 <strong>Год:</strong> 2022</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.6</p>
+            <p>Брюс Уэйн уже два года защищает Готэм под маской Бэтмена. Ему предстоит столкнуться с Загадочником — маньяком, раскрывающим коррупционные тайны элиты города.</p>
+            <p>🎭 <strong>Актёры:</strong> Роберт Паттинсон, Зои Кравиц, Пол Дано</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Мэтт Ривз</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/1048334/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/mqqft22eXJA" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Начало</h1>
+            <p>📅 <strong>Год:</strong> 2010</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.7</p>
+            <p>Профессиональный шпион Кобб крадет секреты из подсознания людей во время сна. Ему дают шанс вернуться домой, если он совершит невозможное — внедрит мысль в чужой разум.</p>
+            <p>🎭 <strong>Актёры:</strong> Леонардо ДиКаприо, Джозеф Гордон-Левитт, Том Харди, Эллиот Пейдж</p>
+            <p>🌍 <strong>Страна:</strong> США, Великобритания</p>
+            <p>🎬 <strong>Режиссёр:</strong> Кристофер Нолан</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/447301/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/YoHD9XEInc0" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://static.wikia.nocookie.net/greatestmovies/images/4/4c/Titanic.jpeg/revision/latest?cb=20230531231117" alt="Постер">
+        <div class="movie-info">
+            <h1>Титаник</h1>
+            <p>📅 <strong>Год:</strong> 1997</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.4</p>
+            <p>История трагической любви бедного художника Джека и богатой аристократки Розы на борту роскошного, но обреченного лайнера «Титаник».</p>
+            <p>🎭 <strong>Актёры:</strong> Леонардо ДиКаприо, Кейт Уинслет, Билли Зейн</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джеймс Кэмерон</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/2213/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/I7c1etV7D7g" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://upload.wikimedia.org/wikipedia/en/e/e1/Joker_%282019_film%29_poster.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Джокер</h1>
+            <p>📅 <strong>Год:</strong> 2019</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.0</p>
+            <p>Готэм, начало 1980-х годов. Одинокий и отвергнутый обществом клоун Артур Флек постепенно теряет рассудок из-за жестокости окружающих и превращается в криминального лидера Джокера.</p>
+            <p>🎭 <strong>Актёры:</strong> Хоакин Феникс, Роберт Де Ниро, Зази Битц</p>
+            <p>🌍 <strong>Страна:</strong> США, Канада</p>
+            <p>🎬 <strong>Режиссёр:</strong> Тодд Филлипс</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/1047745/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/zAGVQLHvwOY" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=4a77bcedef7ba18c61264624830eae134e81e6ea-4353469-images-thumbs&n=13" alt="Постер">
+        <div class="movie-info">
+            <h1>Форсаж</h1>
+            <p>📅 <strong>Год:</strong> 2001</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.8</p>
+            <p>Полицейский под прикрытием Брайан внедряется в банду харизматичного уличного гонщика Доминика Торетто, чтобы расследовать дерзкие налёты на грузовики.</p>
+            <p>🎭 <strong>Актёры:</strong> Пол Уокер, Вин Дизель, Мишель Родригес</p>
+            <p>🌍 <strong>Страна:</strong> США, Германия</p>
+            <p>🎬 <strong>Режиссёр:</strong> Роб Коэн</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/666/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/ZsJz2TJAPjw" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://m.media-amazon.com/images/M/MV5BYzkzYjYwZTMtMGRhNC00ZjgxLThjM2QtMDkzNDllNjEzZTQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Веном</h1>
+            <p>📅 <strong>Год:</strong> 2018</p>
+            <p>⭐ <strong>Рейтинг:</strong> 6.9</p>
+            <p>Журналист Эдди Брок случайно сливается с опасным инопланетным симбиотом Веномом, получая суперсилы и пытаясь ужиться со вторым «я» ради спасения планеты.</p>
+            <p>🎭 <strong>Актёры:</strong> Том Харди, Мишель Уильямс, Риз Ахмед</p>
+            <p>🌍 <strong>Страна:</strong> США, Китай</p>
+            <p>🎬 <strong>Режиссёр:</strong> Рубен Флейшер</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/1051515/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/u9Mv98Gr5pY" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://m.media-amazon.com/images/I/51EG732BV3L.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Матрица</h1>
+            <p>📅 <strong>Год:</strong> 1999</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.5</p>
+            <p>Хакер Нео узнает, что весь его привычный мир — иллюзия, созданная машинами, которые используют людей в качестве батареек, и присоединяется к подпольному сопротивлению.</p>
+            <p>🎭 <strong>Актёры:</strong> Киану Ривз, Лоренс Фишбёрн, Кэрри-Энн Мосс</p>
+            <p>🌍 <strong>Страна:</strong> США, Австралия</p>
+            <p>🎬 <strong>Режиссёр:</strong> Лана Вачовски, Лилли Вачовски</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/301/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/vKQi3bBA1y8" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://ir.ozone.ru/s3/multimedia-1-3/7235187735.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Заклятие</h1>
+            <p>📅 <strong>Год:</strong> 2013</p>
+            <p>⭐ <strong>Рейтинг:</strong> 7.4</p>
+            <p>Практикующие исследователи паранормальных явлений Эд и Лоррейн Уоррен пытаются помочь семье, чей уединенный дом терроризируют темные демонические сущности.</p>
+            <p>🎭 <strong>Актёры:</strong> Вера Фармига, Патрик Уилсон, Лили Тейлор</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джеймс Ван</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/661938/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/k10ETZ42q5o" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Аватар</h1>
+            <p>📅 <strong>Год:</strong> 2009</p>
+            <p>⭐ <strong>Рейтинг:</strong> 8.0</p>
+            <p>Бывший морской пехотинец Джейк Салли с помощью технологий аватара отправляется на удивительную планету Пандора, где возглавляет борьбу местных жителей против земных корпораций.</p>
+            <p>🎭 <strong>Актёры:</strong> Сэм Уортингтон, Зои Салдана, Сигурни Уивер</p>
+            <p>🌍 <strong>Страна:</strong> США</p>
+            <p>🎬 <strong>Режиссёр:</strong> Джеймс Кэмерон</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/251733/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/5PSNL1q36VY" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+    <div class="movie-page">
+        <img class="movie-poster" src="https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg" alt="Постер">
+        <div class="movie-info">
+            <h1>Барби</h1>
+            <p>📅 <strong>Год:</strong> 2023</p>
+            <p>⭐ <strong>Рейтинг:</strong> 6.6</p>
+            <p>Стереотипная Барби сталкивается с неожиданным экзистенциальным кризисом в кукольном идеальном Барбиленде и вместе с Кеном отправляется в реальный человеческий мир.</p>
+            <p>🎭 <strong>Актёры:</strong> Марго Робби, Райан Гослинг, Америка Феррера</p>
+            <p>🌍 <strong>Страна:</strong> США, Великобритания</p>
+            <p>🎬 <strong>Режиссёр:</strong> Грета Гервиг</p>
+            <a class="watch-btn" target="_blank" href="https://www.kinopoisk.ru/film/478055/">▶ Смотреть фильм</a>
+            <iframe src="https://www.youtube.com/embed/pBk4NYhWNMM" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,#ff7ac6 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#6dd5ff 0%,transparent 30%),
+    linear-gradient(135deg,#141326,#221b44,#0f172a);
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity:0.12;
+    pointer-events:none;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 50px;
+    background:rgba(10,10,20,0.45);
+    backdrop-filter:blur(18px);
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Marck Script',cursive;
+    font-size:48px;
+    color:#fff;
+    letter-spacing:2px;
+    transition:0.4s;
+}
+
+.logo:hover{
+    transform:rotate(-2deg) scale(1.04);
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:16px;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#ff9de2;
+    transition:0.4s;
+}
+
+nav a:hover{
+    color:#ffb3ea;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+    animation:show 1.4s ease;
+}
+
+.hero h1{
+    font-family:'Marck Script',cursive;
+    font-size:110px;
+    font-weight:normal;
+    line-height:1;
+    margin-bottom:25px;
+    color:#fff;
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.4),
+    0 0 40px rgba(255,120,200,0.35);
+}
+
+.hero p{
+    font-size:22px;
+    color:#ececec;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero button{
+    border:none;
+    padding:18px 42px;
+    border-radius:60px;
+    font-size:17px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(90deg,#ff7ac6,#8f7dff,#6dd5ff);
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.hero button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 40px rgba(255,150,220,0.35);
+}
+
+.movies-page{
+    padding:150px 50px 60px;
+}
+
+.movies-page h1{
+    font-family:'Marck Script',cursive;
+    font-size:72px;
+    margin-bottom:45px;
+    text-align:center;
+}
+
+.movies-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+}
+
+.movie-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(16px);
+    transition:0.45s ease;
+}
+
+.movie-card:hover{
+    transform:translateY(-10px) rotate(-1deg);
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.25),
+    0 0 25px rgba(255,140,220,0.25);
+}
+
+.movie-card img{
+    width:100%;
+    height:390px;
+    object-fit:cover;
+    transition:0.6s ease;
+}
+
+.movie-card:hover img{
+    transform:scale(1.08);
+}
+
+.movie-card h3{
+    font-family:'Marck Script',cursive;
+    font-size:38px;
+    font-weight:normal;
+    padding:20px 20px 10px;
+}
+
+.movie-card p{
+    padding:0 20px 25px;
+    line-height:1.7;
+    color:#dddddd;
+    font-size:15px;
+}
+
+.movie-page{
+    padding:150px 50px 50px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+}
+
+.movie-poster{
+    width:340px;
+    border-radius:30px;
+    object-fit:cover;
+    box-shadow:0 20px 45px rgba(0,0,0,0.35);
+}
+
+.movie-info{
+    flex:1;
+    min-width:320px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:35px;
+    padding:40px;
+    animation:show 1s ease;
+}
+
+.movie-info h1{
+    font-family:'Marck Script',cursive;
+    font-size:72px;
+    font-weight:normal;
+    margin-bottom:25px;
+}
+
+.movie-info p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:18px;
+    color:#f1f1f1;
+}
+
+.watch-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:18px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(90deg,#ff7ac6,#6dd5ff);
+    transition:0.4s;
+}
+
+.watch-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 35px rgba(109,213,255,0.35);
+}
+
+iframe{
+    width:100%;
+    height:430px;
+    border:none;
+    border-radius:28px;
+    margin-top:35px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.about-page{
+    max-width:1000px;
+    margin:140px auto 60px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:35px;
+    overflow:hidden;
+}
+
+.about-hero-banner{
+    padding:70px 40px;
+    text-align:center;
+    background:
+    linear-gradient(135deg,#ff7ac6,#ffb36b,#6dd5ff);
+}
+
+.about-hero-banner h1{
+    font-family:'Marck Script',cursive;
+    font-size:68px;
+    font-weight:normal;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    font-size:19px;
+    color:rgba(255,255,255,0.9);
+}
+
+.about-content-wrapper{
+    padding:45px;
+}
+
+.about-content-wrapper h2{
+    font-size:34px;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.about-content-wrapper p{
+    line-height:1.9;
+    margin-bottom:18px;
+    color:#ececec;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin:40px 0;
+}
+
+.feature-card{
+    background:rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:28px 22px;
+    transition:0.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.12);
+}
+
+.feature-icon{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.feature-card h3{
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+.about-stats{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:30px;
+}
+
+.stat-item{
+    text-align:center;
+}
+
+.stat-number{
+    font-size:46px;
+    font-weight:600;
+}
+
+.stat-label{
+    margin-top:8px;
+    color:#ddd;
+}
+
+footer{
+    margin-top:60px;
+    padding:35px;
+    text-align:center;
+    color:#d7d7d7;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(10px);
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:18px 20px;
+    }
+
+    .logo{
+        font-size:38px;
+    }
+
+    nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:68px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .movies-page,
+    .movie-page{
+        padding:140px 20px 40px;
+    }
+
+    .movie-page{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .movie-poster{
+        width:100%;
+        max-width:320px;
+    }
+
+    .movie-info{
+        width:100%;
+        padding:25px;
+    }
+
+    .movie-info h1{
+        font-size:50px;
+    }
+
+    iframe{
+        height:240px;
+    }
+
+    .about-page{
+        margin:130px 15px 40px;
+    }
+
+    .about-hero-banner h1{
+        font-size:48px;
+    }
+
+    .about-content-wrapper{
+        padding:28px;
+    }
+
+    .about-stats{
+        flex-direction:column;
+    }
+
+}
+
+
